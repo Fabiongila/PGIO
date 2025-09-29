@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>SGIC - Inicio</title>
+        <link rel="stylesheet" href="{% static 'style/hover.css' %}">
+        <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    </head>
+
+    <body>
+        {% include 'account/sidebar.html' %}
+        <div class="content">
+            <!--Aqui vai ser exibido o conteúdo principal.-->
+            <nav>
+                <h1> Bem-vindo a Dashboard {{ user }} </h1>
+                <p id="hour">hora:</p>
+            </nav>
+            <section class="sec-pri" id="sec-pri" >
+                <a href="{% url 'depex' %}">Finanças</a>
+                <a class="btn-Adddep" id="btnAddDep" href="{% url 'novo_departamento' %}">Adicionar departamento +</a>
+            </section>
+            <section>
+                <div>
+                    <h2>Destaques do mês</h2>
+                    <ul>
+                        <li>Presença</li>
+                        <li>Pontualidade</li>
+                        <li>Participação</li>
+                        <li>Percentualmente</li>
+                    </ul>
+                </div>
+            </section>
+        </div>
+        <script src="{% static 'script/script.js' %}"></script>
+    </body>
+
+</html>

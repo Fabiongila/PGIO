@@ -1,0 +1,73 @@
+{% extends "account/base_entrance.html" %}
+{% load static %}
+{% load i18n %}
+{% load allauth account %}
+{% block head_title %}
+    <title>{% trans "Signup" %}</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <style>
+        body{
+            background-image: url("{% static 'background.png' %}");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+{% endblock head_title %}
+{% block content %}
+    <body>
+        <div class="container">
+            {% element h1 %}
+                {% trans "Sign Up" %}
+            {% endelement %}
+            {% setvar link %}
+                <a href="{{ login_url }}">
+                {% endsetvar %}
+                {% setvar end_link %}
+                </a>
+            {% endsetvar %}
+            {% element p %}
+                {% blocktranslate %}Already have an account? Then please {{ link }}Login{{ end_link }}.{% endblocktranslate %}
+            {% endelement %}
+            {% if not SOCIALACCOUNT_ONLY %}
+                <form action="{% url account_signup as action_url%}" method='post'>
+                    {% element form form=form method="post" action=action_url tags="entrance,signup" %}
+                        {% slot body %}
+                            {% csrf_token %}
+                            <div class="form-group" required>
+                                {{ form.username }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.email }}
+                            </div>
+                            <div class="form-group">
+                                {{ form.number }}
+                            </div>
+                            <div class="form-group" required>
+                                {{ form.password1 }}
+                            </div>
+                            <div class="form-group" required>
+                                {{ form.password2 }}
+                            </div>
+                            {{ redirect_field }}
+                        {% endslot %}
+                        {% slot actions %}
+                            {% element button tags="prominent,signup" type="submit" %}
+                                {% trans "Sign Up" %}
+                            {% endelement %}
+                        {% endslot %}
+                    {% endelement %}
+                </form>
+            {% endif %}
+            {% if PASSKEY_SIGNUP_ENABLED %}
+                {% element hr %}
+                {% endelement %}
+                {% element button href=signup_by_passkey_url tags="prominent,signup,outline,primary" %}
+                    {% trans "Sign up using a passkey" %}
+                {% endelement %}
+            {% endif %}
+            {% if SOCIALACCOUNT_ENABLED %}
+                {% include "socialaccount/snippets/login.html" with page_layout="entrance" %}
+            {% endif %}
+        </div>
+    </body>
+{% endblock content %}

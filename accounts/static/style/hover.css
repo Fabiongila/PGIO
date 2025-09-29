@@ -1,0 +1,21 @@
+/*SIDEBAR*/
+.sidebar a:hover {
+    /*background-color: #dfd7cb;
+    color: rgb(78, 3, 3);*/
+    font-size: 18px;
+}
+
+.sidebarBottom a:hover{
+    font-size: 12px;
+}
+/*LINKS DO TOPO PARA LOGIN*/
+.text-top a:hover{
+    color: #003;
+    font-size: 17px;
+}
+/**/
+footer a:hover{
+    text-decoration:underline;
+    font-weight: bold;
+}
+/*BOTÕES ADD DEPARTAMENTOS*/

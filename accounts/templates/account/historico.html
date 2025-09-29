@@ -1,0 +1,30 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGIC - Histórico</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/hover.css' %}">
+</head>
+
+<body>
+   {% include 'account/sidebar.html' %}
+    <div class="content">
+        <!--Aqui vai ser exibido o conteúdo principal.-->
+        <nav>
+            <h1>Histórico </h1>
+            <p id="hour">hora:</p>
+        </nav>
+        <section class="sec-pri" id="sec-pri" >
+            <a href="#">Presença</a>
+            <a href="#">Destacados do mês</a>
+        </section>
+        <section></section>
+    </div>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+
+</html>

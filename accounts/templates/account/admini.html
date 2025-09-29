@@ -1,0 +1,41 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGIC - Administração</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/hover.css' %}">
+    <style>
+        .hidden a{
+            display: none;
+        }
+        #link{
+            background-color: #dfd7cb;
+            border: none;
+            color: black;
+        }
+    </style>
+</head>
+<body>
+    {% include 'account/sidebar.html' %}
+    <div class="content">
+        <!--Aqui vai ser exibido o conteúdo principal.-->
+        <nav>
+            <h1>Administração</h1>
+            <p id="hour">Aqui o usuário poderá gerenciar os membros da empresa e em cada departamento (adicionar, excluir & alterar).</p>
+        </nav>
+        <section>
+            <a href="#">Finanças</a>
+            <a href="{% url 'lista_membros' %}">All members</a>
+            <a class="btn-Adddep" id="botaodep" href="#" onclick="botaodep()">Adicionar +</a>
+            <section id="hidden" class="hidden">
+                <a id="link" href="{% url 'novo_membro' %}">Membro +</a>
+                <a id="link" href="{% url 'novo_departamento' %}">Departamento +</a>
+            </section>
+        </section>
+    </div>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+</html>

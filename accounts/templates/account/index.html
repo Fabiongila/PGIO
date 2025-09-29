@@ -1,0 +1,113 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PGIO</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/hover.css' %}">
+    <!-- <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/hover.css' %}"> -->
+</head>
+<style>
+    .btnAuth {
+        background-color: white;
+        border: none;
+        margin: 0;
+        padding: 0;
+    }
+</style>
+
+<body>
+    <nav class="principal">
+        <img src="" id="foto" alt="painel de imagens">
+    </nav>
+    <div class="content">
+        <!--Aqui vai ser exibido o conteúdo principal.-->
+        <section class="text-top">
+            <p>Registra-se ou inicia sessão para explorar todas as funcionalidades da plataforma</p>
+            <a href="{% url 'account_signup' %}">Registrar</a>
+            <a href="{% url 'account_login' %}">Entrar</a>
+        </section>
+        <section class="sec-seg">
+            <img src="{% static 'model-img.png' %}" alt="">
+            <div class="text-sec">
+                <h2>Aqui você pode monitorar o funcionamento da sua instituição
+                </h2>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis esse et provident odit maiores
+                    sunt nesciunt sint nam necessitatibus fuga, quam ipsam ducimus incidunt magnam obcaecati placeat
+                    ipsum expedita maxime.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis deleniti quaerat quae assumenda
+                    laboriosam magni facere perspiciatis reiciendis suscipit ea modi tempore, vel, vero qui rerum
+                    commodi quisquam earum quia?</p>
+            </div>
+        </section>
+        <section class="sec-seg">
+            <div class="text-sec">
+                <h2>Com a ajuda da eletrónica tudo fica mais fácil</h2>
+                <div style="margin: 2%;" class="text-top">
+                    <p style="margin: 1%;">Foi projetado um sistema fingerPrint para contabilizar os membros presentes!
+                    </p>
+                    <p style="margin: 1%;">Registra-se ou inicia sessão para explorar todas as funcionalidades da
+                        plataforma <a class="btnAuth" href="{{ signup_url }}">Registrar</a><a class="btnAuth"
+                            href="{{ login_url }}">Entrar</a></p>
+                </div>
+                <img style="width: 100%;"
+                    src="https://th.bing.com/th/id/R.2bfcb1f76e10d8cf3d128e870104041b?rik=HMo5KMuSUbv6fw&pid=ImgRaw&r=0"
+                    alt="">
+            </div>
+        </section>
+        <footer>
+            <table>
+                <!-- CABEÇARIO -->
+                <tr>
+                    <th>Redes socias</th>
+                    <th>Links</th>
+                    <th>Contactos</th>
+                    <th>Outros projetos</th>
+                </tr>
+                <!-- 1 LINHA -->
+                <tr>
+                    <td><a href="">LinkedIn</a></td>
+                    <td><a href=""> Sobre</a></td>
+                    <td>
+                        <p>(+244) 933600597</p>
+                    </td>
+                    <td><a href=""> Eyk</a></td>
+                </tr>
+                <!-- 2 LINHA -->
+                <tr>
+                    <td><a href="">Instagram</a></td>
+                    <td><a href="">Politicas</a></td>
+                    <td>
+                        <p>transfortech0@gmail.com</p>
+                    </td>
+                    <td><a href="">Agrodrone</a></td>
+                </tr>
+                <!-- 3 LINHA -->
+                <tr>
+                    <td>
+
+                    </td>
+                    <td>
+                        <a href="#">Desenvolvedores</a>
+                    </td>
+                    <td>
+                        <a href="#">Whatsapp</a>
+                    </td>
+                </tr>
+                <!-- 4 LINHA -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+
+</html>

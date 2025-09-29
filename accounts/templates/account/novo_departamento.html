@@ -1,0 +1,55 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGIC - Novo departamento</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <link rel="stylesheet" href="{% static 'style/hover.css' %}">
+    <style>
+        input,textarea{
+            width: 100%;
+            padding: 5%;
+            border-radius: 4px;
+            border:1px solid rgb(0, 0, 0);
+            background-color: #dfd7cb;
+        }
+        button{
+            color: white;
+            border-radius: 4px;
+            width: 50%;
+            padding: 5%;
+            background-color: rgba(78,3,3);
+        }
+        img{
+            width: 30%;
+            margin-left: 40%;
+        }
+    </style>
+</head>
+
+<body>
+    {% include "account/sidebar.html" %}
+   
+    <div class="content">
+        <!--Aqui vai ser exibido o conteúdo principal.-->
+        <nav>
+            <h1>Administração</h1>
+            <p id="hour">hora:</p>
+        </nav>
+        <section>
+            <form action="" method='POST'>
+                {% csrf_token %}
+                <h2>Criar novo departamento</h2>
+                {{ formulario_dep }}
+                <button type="submit">Adicionar</button>
+            </form>
+            <img src="{% static 'model-img.png' %}" alt="">
+        </section>
+    </div>
+    <script src="{% static 'script/script.js' %}"></script>
+</body>
+
+</html>
