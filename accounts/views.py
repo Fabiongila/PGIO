@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Departamento
-from .forms import DepartamentoForm
+from .models import Departamento, Membros
+from .forms import DepartamentoForm, MembrosForm
 
 
 def index(request):
@@ -39,7 +39,20 @@ def depex(request):
     return render(request, 'account/depex.html', context=dados)
 
 def novo_membro(request):
-    return render(request, 'account/novo_membro.html')
+    if request.method == 'POST':
+        membro_form = MembrosForm(request.POST)
+        if membro_form.is_valid():
+            membro_form.save()
+        return redirect('inicio')
+    else:
+        membro_form = MembrosForm()
+        formulario_memb= {
+            'formulario_memb': membro_form
+        }
+        return render(request, 'account/novo_membro.html', context=formulario_memb)
 
 def lista_membros(request):
-    return render(request, 'account/lista_membros.html')
+    dados ={
+        'dados': Membros.objects.all()
+    }
+    return render(request, 'account/lista_membros.html', context=dados)

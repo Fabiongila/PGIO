@@ -42,19 +42,11 @@
             <p id="hour">hora:</p>
         </nav>
         <section>
-            <form action="{% url 'account_signup' as 'action_url' %}" method='post'>
+            <form action="" method='POST'>
                 <h2>Adicionar novo membro</h2>
-                <br>
-                <input type="text" placeholder="Nome" required><br><br>
-                <input type="text" placeholder="Número"><br><br>
-                <input type="text" placeholder="Email"><br><br>
-                <textarea type="password" placeholder="Password"></textarea>
-                <br><br>
-                <select name="" id="">
-                    <option value="">Funcionário</option>
-                    <option value="">Estudante</option>
-                </select><br><br>
-                <button>Adicionar</button><br>
+                {% csrf_token %}
+                {{ formulario_memb }}
+                <button type='submit'>Adicionar</button><br>
             </form>
             <img src="{% static 'model-img.png' %}" alt="">
         </section>

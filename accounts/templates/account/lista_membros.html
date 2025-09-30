@@ -15,35 +15,29 @@
     <div class="content">
         <!--Aqui vai ser exibido o conteúdo principal.-->
         <nav>
-            <h1>Membros da organização {{ user }} </h1>
-            <p id="hour">hora:</p>
+            <h1>Relação nominal de trabalhadores </h1>
+            <!--p id="hour">hora:</p-->
         </nav>
         <section>
-            <table border="">
+            <table border="table table-striped table-bordered">
                 <tr>
                     <th>Nome</th>
-                    <th>Número</th>
+                    <th>Profissão</th>
+                    <th>Contacto</th>
                     <th>Email</th>
-                    <th>Alterações</th>
                 </tr>
+                {% for dado in dados %}
                 <tr>
-                    <td>Abel</td>
-                    <td>(+244) 941606790</td>
-                    <td>Abelpy@gmail.com</td>
+                    <td>{{dado.nome}} {{dado.sobrenome}}</td>
+                    <td>{{dado.profissão}}</td>
+                    <td>{{dado.número}}</td>
+                    <td>{{dado.email}}</td>
                     <td>
                         <button id="edit">Editar</button>
                         <button id="delete">Eliminar</button>
                     </td>
                 </tr>
-                <tr>
-                    <td>Fábio</td>
-                    <td>0000000000</td>
-                    <td>FabioNgila@gmail.com</td>
-                    <td>
-                        <button id="edit">Editar</button>
-                        <button id="delete">Eliminar</button>
-                    </td>
-                </tr>
+                {% endfor %}
             </table>
         </section>
     </div>
