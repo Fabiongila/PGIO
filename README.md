@@ -1,5 +1,5 @@
 # PGIO
-Sistema funcional de controle utilizado para organização, gestãono meio empresarial
+Sistema funcional de controle utilizado para organização, gestão no meio empresarial
 
 1 --------------
 Executa o comando para instalar as dependências:

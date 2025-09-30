@@ -8,9 +8,7 @@
 body{
     background-color: #dfd7cb;
 }
-.principal img{
-    width: 100%;
-}
+
 nav{
     margin-bottom: 3%;
 }
@@ -82,7 +80,7 @@ nav p{
 }
 /*TAG QUE MOSTRA O CONTEUDO A DIREITA DA SIDEBAR*/
 .content {
-    margin-left: 250px; /* Move o conteúdo para a direita da sidebar */
+    margin-left: 250px; /* Move o conteúdo para a direita da sidebar*/
     margin-right: 2%;
     padding: 20px;
     height: 100%;
@@ -199,6 +197,7 @@ section a{
     border-radius: 4px;
     margin-bottom: 5%;
     padding: 2%;
+    cursor: pointer;
 }
 .container a{
     color: #000;
@@ -211,10 +210,10 @@ section a{
     border-radius: 5px;
     padding: 0%;
 }
-.secPainel img{
+/* .secPainel img{
     width: 100%;
     height: auto;
-}
+} */
 #btnAnt{
     background-color: rgba(0, 0, 0, 0.1);
     position: relative;
@@ -251,4 +250,5 @@ footer{
 }
 footer a{
     text-decoration: none;
+    transition: 0.1s ease-in-out;
 }
