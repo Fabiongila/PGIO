@@ -1,8 +1,17 @@
+const hour = () =>{
+            const date = new Date();
+            let hora = date.getHours()
+            let minuto = date.getMinutes()
+            let segundo = date.getSeconds()
+            document.getElementById("hour").innerHTML=`${hora}:${minuto}:${segundo}`
+        }
+        setInterval(hour,1000)
+
 //IMAGENS
 var i = 0;
 
 let imagens = [
-    '/static/img-index/2.jpg',
+    '/static/ui/1.png',
     '/static/img-index/4.jpg',
     '/static/img-index/2.jpg',
     '/static/img-index/10.jpg'
@@ -42,5 +51,3 @@ setInterval(change,7000)
 function botaodep(){
     document.getElementById("hidden").classList.remove("hidden")
 }
-
-// document.body.style.backgroundImage=imagens[i]
