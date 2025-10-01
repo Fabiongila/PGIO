@@ -43,9 +43,9 @@
         </nav>
         <section>
             <form action="" method='POST'>
-                <h2>Adicionar novo membro</h2>
+                <h2>Adicionar novo trabalhador</h2>
                 {% csrf_token %}
-                {{ formulario_memb }}
+                {{ formulario_trab }}
                 <button type='submit'>Adicionar</button><br>
             </form>
             <img src="{% static 'model-img.png' %}" alt="">

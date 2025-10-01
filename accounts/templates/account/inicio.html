@@ -16,11 +16,12 @@
             <!--Aqui vai ser exibido o conteúdo principal.-->
             <nav>
                 <h1> Bem-vindo a Dashboard {{ user }} </h1>
-                <p id="hour">hora:</p>
+                <!--p id="hour">hora:</p-->
             </nav>
             <section class="sec-pri" id="sec-pri" >
-                <a href="{% url 'depex' %}">Finanças</a>
-                <a class="btn-Adddep" id="btnAddDep" href="{% url 'novo_departamento' %}">Adicionar departamento +</a>
+                <!--a href="{% url 'depex' %}">Finanças</a-->
+            <a href="{% url 'lista_membros' %}">Trabalhadores</a>
+
             </section>
             <section>
                 <div>

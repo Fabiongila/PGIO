@@ -28,10 +28,12 @@
                 </tr>
                 {% for dado in dados %}
                 <tr>
-                    <td>{{dado.nome}} {{dado.sobrenome}}</td>
+                    <td>{{dado.nome}}</td>
                     <td>{{dado.profissão}}</td>
+                    <td>{{dado.departamento}}</td>
                     <td>{{dado.número}}</td>
                     <td>{{dado.email}}</td>
+                    <td>{{dado.data_contratacao}}</td>
                     <td>
                         <button id="edit">Editar</button>
                         <button id="delete">Eliminar</button>

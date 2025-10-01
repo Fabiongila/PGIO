@@ -1,5 +1,12 @@
 from django.forms import ModelForm
-from .models import Departamento, Usuario, Membros
+from .models import Departamento, Usuario, Trabalhador, ConfiguracaoPlataforma , RegistroPonto, User
+
+
+class EditUserForm(ModelForm):
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email']
+
 
 class DepartamentoForm(ModelForm):
     class Meta:
@@ -11,7 +18,12 @@ class UsuarioForm(ModelForm):
         model= Usuario
         fields = '__all__'
 
-class MembrosForm(ModelForm):
+class TrabalhadorForm(ModelForm):
     class Meta:
-        model = Membros
+        model = Trabalhador
         fields = '__all__'
+
+class ConfiguracaoForm(ModelForm):
+    class Meta:
+        model = ConfiguracaoPlataforma
+        fields = ['nome_empresa', 'logotipo']

@@ -24,15 +24,14 @@
         <!--Aqui vai ser exibido o conteúdo principal.-->
         <nav>
             <h1>Administração</h1>
-            <p id="hour">Aqui o usuário poderá gerenciar os membros da empresa e em cada departamento (adicionar, excluir & alterar).</p>
+            <!--p id="hour">Aqui o usuário poderá gerenciar os membros da empresa e em cada departamento (adicionar, excluir & alterar).</p!-->
         </nav>
         <section>
-            <a href="#">Finanças</a>
-            <a href="{% url 'lista_membros' %}">All members</a>
+            <!--a href="#">Finanças</a-->
             <a class="btn-Adddep" id="botaodep" href="#" onclick="botaodep()">Adicionar +</a>
             <section id="hidden" class="hidden">
-                <a id="link" href="{% url 'novo_membro' %}">Membro +</a>
-                <a id="link" href="{% url 'novo_departamento' %}">Departamento +</a>
+                <a id="link" href="{% url 'novo_membro' %}">Novo Trabalhador</a>
+                <a id="link" href="{% url 'novo_departamento' %}">Novo Departamento</a>
             </section>
         </section>
     </div>

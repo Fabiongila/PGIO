@@ -1,0 +1,31 @@
+{% extends "account/base_entrance.html" %}
+{% load static %}
+{% load i18n %}
+{% load allauth account %}
+{% block head_title %}
+    <title>{% trans "Signup" %}</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}">
+    <style>
+        body{
+            background-image: url("{% static 'background.png' %}");
+            background-size: 100%;
+            background-repeat: no-repeat;
+        }
+    </style>
+{% endblock head_title %}
+{% block content %}
+    <body>
+        <div class="container">
+            
+            {% element p %}
+                {% blocktranslate %}Already have an account? Then please {{ link }}Login{{ end_link }}.{% endblocktranslate %}
+            {% endelement %}
+                <form action="" method='POST'>
+                    {% csrf_token %}
+                    {{ Usuario }}
+                    {{ redirect_field }}
+                </form>
+            {% endif %}
+        </div>
+    </body>
+{% endblock content %}

@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<h2>Editar Perfil</h2>
+
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div>
+        <label for="id_username">Nome de usuário:</label>
+        {{ form.username }}
+    </div>
+
+    <div>
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+    </div>
+
+    <div>
+        <label for="id_logotipo">Foto / Logotipo:</label>
+        {{ form.logotipo }}
+    </div>
+
+    {% if user.profile.logotipo %}
+        <div>
+            <p>Imagem atual:</p>
+            <img src="{{ user.profile.logotipo.url }}" alt="Logotipo" style="max-width: 150px;">
+        </div>
+    {% endif %}
+
+    <button type="submit">Salvar alterações</button>
+</form>
+{% endblock %}

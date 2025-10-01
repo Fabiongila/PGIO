@@ -1,9 +1,9 @@
 {% load static %}
 <div class="sidebar">
-    <img class="icon" src="{% static 'logo caf.png' %}" alt="logotipo||nome da empresa">
+    <img src="{{ config.logotipo.url }}" alt="Logo" />   
     <a href="{% url 'inicio' %}">Inicio</a>
     <a href="{% url 'admini' %}">Administração</a>
-    <a href="{% url 'historico' %}">Histórico</a>
+    <!--a href="{% url 'historico' %}">Histórico</a-->
     <a href="{% url 'definicoes' %}">Settings</a>
     <div class="sidebarBottom">
         <a href="#">Ajuda</a>

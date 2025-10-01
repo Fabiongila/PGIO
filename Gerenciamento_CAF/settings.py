@@ -139,9 +139,21 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 LOGIN_REDIRECT_URL = '/account/inicio/'
 #LOGOUT_REDIRECT_URL = '/account/index/'
 
+SIGINUP_REDIRECT_URL = '/account/login/'
+
 #Adaptador para redirecionamento após login
 ACCOUNT_ADAPTER = 'accounts.adapter.AccountAdapter'
 
 ACCOUNT_AUTHENTICATION_METHOD = 'username'
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = True
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.AllowAny',
+    ]
+}
+
+MEDIA_URL ='/media/'
+MEDIA_ROOT = BASE_DIR / 'media'
