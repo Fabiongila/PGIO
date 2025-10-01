@@ -35,9 +35,9 @@ class Trabalhador(models.Model):
 
 class ConfiguracaoPlataforma(models.Model):
     nome_empresa = models.CharField(max_length=100)
-    logotipo = models.ImageField(upload_to='logos/', null=True)
+    logotipo = models.ImageField(upload_to='logos/', blank=True, null=True)
 
-    def __str_(self):
+    def __str__(self):
         return self.nome_empresa
 
 

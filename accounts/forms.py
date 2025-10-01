@@ -26,4 +26,4 @@ class TrabalhadorForm(ModelForm):
 class ConfiguracaoForm(ModelForm):
     class Meta:
         model = ConfiguracaoPlataforma
-        fields = ['nome_empresa', 'logotipo']
+        fields = ['logotipo']

@@ -82,13 +82,13 @@ def cadastro(request):
 def configurar_plataforma(request):
     config, created = ConfiguracaoPlataforma.objects.get_or_create(id=1)
     if request.method == 'POST':
-        form = ConfiguracaoForm(request.POST, request.FILES, instance=config)
-        if form.is_valid():
-            form.save()
+        config_form = ConfiguracaoForm(request.POST, request.FILES, instance=config)
+        if config_form.is_valid():
+            config_form.save()
             return redirect('inicio')
     else:
-        form = ConfiguracaoForm(instance=config)
-    return render(request, 'account/configurar.html', {'form': form}, context=config)
+        config_form = ConfiguracaoForm(instance=config)
+    return render(request, 'account/configurar.html', {'form':config_form, 'config': config})
 
 
 @login_required
