@@ -30,7 +30,7 @@
             <a href="">Home</a>
             <a href="">Sobre</a>
             <a href="">Contacto</a>
-            <a href="">Entrar</a>
+            <a href="{% url 'account_login' %}">Entrar</a>
         </nav>
         <img src="" id="foto" alt="Painel de imagens do sistema">
     </nav>
@@ -38,8 +38,8 @@
         <!--Aqui vai ser exibido o conteúdo principal.-->
         <section class="text-top">
             <p>Registra-se ou inicia sessão para explorar todas as funcionalidades da plataforma</p>
-            <a href="{% url 'account_signup' %}">Registrar</a>
-            <a href="{% url 'account_login' %}">Entrar</a>
+            <a class="btn" href="{% url 'account_signup' %}">Registrar</a>
+            <a class="btn" href="{% url 'account_login' %}">Entrar</a>
         </section>
 
         <section class="sec-seg">

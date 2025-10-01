@@ -19,12 +19,12 @@
         </nav>
         <section class="perso" >
             <h2>Personalize</h2>
-            <button>Mode</button>
+            <a href="#">Mode</a>
         </section>
         <section class="auth">
-            <h2>Users</h2>
+            <h2>Usuário</h2>
             <a href="{% url 'novo_membro' %}">Novo Usuário</a>
-           <a href="{% url 'account_logout' %}">Sign Out</a>
+           <a href="{% url 'account_logout' %}">Sair</a>
         </section>
         <section class="danger">
             <h2>Danger zone</h2>
@@ -35,3 +35,18 @@
 </body>
 
 </html>
+
+<style>
+    /*SEÇÃO AUTENTICAÇÃO EM DEFINIÇÕES*/
+    .auth{
+        display: flex;
+        flex-direction: column;
+    }
+    .auth a{
+        border:none;
+        padding: 5px;
+        background:none;
+        margin-bottom: 2%;
+        color:#002;
+    }
+</style>
