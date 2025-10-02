@@ -65,12 +65,21 @@ def lista_membros(request):
     }
     return render(request, 'account/lista_membros.html', context=dados)
 
+
+def lista_departamentos(request):
+    dados ={
+        'dados': Departamento.objects.all()
+    }
+    return render(request, 'account/lista_departamento.html', context=dados)
+
+
+
 @login_required
 def cadastro(request):
     if request.method == 'POST':
-        form = UsuarioForm(request.POST)
-        if form.is_valid():
-            form.save()
+        form_usuario = UsuarioForm(request.POST)
+        if form_usuario.is_valid():
+            form_usuario.save()
         return redirect('inicio')
     else:
         form = UsuarioForm()
