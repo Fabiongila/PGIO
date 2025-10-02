@@ -1,4 +1,6 @@
 from django.forms import ModelForm
+from allauth.account.forms import SignupForm
+from django.contrib.auth.models import User
 from .models import Departamento, Usuario, Trabalhador, ConfiguracaoPlataforma , RegistroPonto, User
 
 
@@ -13,10 +15,10 @@ class DepartamentoForm(ModelForm):
         model = Departamento
         fields = '__all__'
 
-class UsuarioForm(ModelForm):
-    class Meta:
-        model= Usuario
-        fields = '__all__'
+class UsuarioForm(SignupForm):
+    def save(self, request):
+        user = super().save(request)
+        return user
 
 class TrabalhadorForm(ModelForm):
     class Meta:

@@ -65,19 +65,19 @@ def lista_membros(request):
     }
     return render(request, 'account/lista_membros.html', context=dados)
 
-
+@login_required
 def cadastro(request):
     if request.method == 'POST':
-        cadastro_form = UsuarioForm(request.POST)
-        if cadastro_form.is_valid():
-            cadastro_form.save()
+        form = UsuarioForm(request.POST)
+        if form.is_valid():
+            form.save()
         return redirect('inicio')
     else:
-        cadastro_form = UsuarioForm()
-        formulario_cad= {
-            'formulario_cad': cadastro_form
+        form = UsuarioForm()
+        form= {
+            'form': form
         }
-        return render(request, 'account/signup.html', context=formulario_cad)
+        return render(request, 'account/cadastro_usuario.html', context=form)
 
 def configurar_plataforma(request):
     config, created = ConfiguracaoPlataforma.objects.get_or_create(id=1)

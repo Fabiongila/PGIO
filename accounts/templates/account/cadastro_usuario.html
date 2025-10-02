@@ -1,0 +1,9 @@
+{#% extends "base.html" %3#}
+{#% block content %#}
+  <h2>Cadastrar novo usuário</h2>
+  <form action="" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Cadastrar</button>
+  </form>
+{#% endblock %#}
