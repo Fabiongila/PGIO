@@ -1,0 +1,1 @@
+web: gunicorn Grenciamento_CAF.wsgi:application
